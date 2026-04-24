@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cango</title>
+  <meta
+    name="description"
+    content="Profile page with a guns.lol-inspired look, animated media background and a dedicated service tab."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <button class="intro-gate" type="button" data-intro-gate aria-label="Open profile">
+    <span class="intro-gate__eyebrow">Shiny</span>
+    <strong class="intro-gate__title">CLICK TO REVIEW</strong>
+    <span class="intro-gate__subline">Click to enter</span>
+  </button>
+
+  <div class="profile-media" aria-hidden="true">
+    <div class="profile-youtube" data-profile-youtube></div>
+    <video
+      class="profile-video"
+      data-profile-video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="./profile-bg-poster.jpg"
+      disablepictureinpicture
+    ></video>
+    <div class="profile-media__overlay"></div>
+  </div>
+
+  <audio class="profile-audio" data-profile-audio preload="auto" loop></audio>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="sound-control">
+      <button
+        class="sound-button"
+        type="button"
+        aria-label="Adjust volume"
+        aria-controls="volume-panel"
+        aria-expanded="false"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 9v6h4l5 4V5L9 9H5Z"></path>
+          <path d="M18 8.5a5 5 0 0 1 0 7"></path>
+          <path d="M16.5 6a8 8 0 0 1 0 12"></path>
+        </svg>
+      </button>
+
+        <div class="volume-panel" id="volume-panel" data-volume-panel>
+          <div class="volume-panel__head">
+            <span>Volume</span>
+            <span class="volume-panel__value" data-volume-value>40%</span>
+          </div>
+          <input
+            class="volume-slider"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="40"
+            aria-label="Volume"
+            data-volume-slider
+          >
+      </div>
+    </div>
+
+    <nav class="top-tabs" aria-label="Profile navigation">
+      <button class="top-tab active" type="button" data-tab="profile">Profile</button>
+      <button class="top-tab" type="button" data-tab="service">Service</button>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="center-stage">
+      <section class="tab-pane active profile-pane" data-pane="profile">
+        <div class="profile-shell">
+          <div class="sparkles sparkles--profile" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <h1 class="profile-title" data-profile-name>Shiny</h1>
+          <p class="profile-tagline" data-profile-tagline>
+            Fivem Cheat Soon! | Discord Soon!
+          </p>
+          <a
+            class="profile-invite"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+            data-profile-invite
+            data-track-link
+            hidden
+          >
+          </a>
+
+          <a
+            class="discord-panel"
+            href="Discord Soon!"
+            target="_blank"
+            rel="noreferrer"
+            data-profile-discord-link
+            data-track-link
+            aria-label="Open Discord profile"
+          >
+            <div class="discord-panel__avatar-shell">
+              <div class="discord-panel__avatar-fallback" data-discord-avatar-fallback>S</div>
+              <img class="discord-panel__avatar" alt="Discord Avatar" data-discord-avatar>
+              <span class="discord-panel__avatar-dot" data-discord-avatar-dot></span>
+            </div>
+
+            <div class="discord-panel__copy">
+              <div class="discord-panel__title-row">
+                <strong data-discord-name>shiny17_</strong>
+                <span class="discord-panel__title-dot" data-discord-title-dot></span>
+              </div>
+              <span class="discord-panel__status" data-discord-status>last seen unknown</span>
+            </div>
+          </a>
+
+          <div class="profile-links" aria-label="Profile links">
+            <a
+              class="social-link social-link--profile"
+              href="https://discord.gg/2BAwrUscuP"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Discord"
+              data-profile-discord-button
+              data-track-link
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.54 5.41A17 17 0 0 0 15.3 4l-.2.4a15 15 0 0 1 3.76 1.42A13.7 13.7 0 0 0 12 4.22a13.7 13.7 0 0 0-6.86 1.6A15 15 0 0 1 8.9 4.4L8.7 4a17 17 0 0 0-4.24 1.41C1.78 9.33 1.05 13.15 1.4 16.92A17.2 17.2 0 0 0 6.6 19.6l1.12-1.53a11 11 0 0 1-1.76-.86l.3-.22c3.4 1.56 7.08 1.56 10.44 0l.31.22a11 11 0 0 1-1.77.86l1.12 1.53a17.2 17.2 0 0 0 5.2-2.68c.41-4.38-.7-8.17-2.02-11.51ZM8.9 14.62c-1 0-1.81-.93-1.81-2.06s.79-2.05 1.8-2.05 1.83.92 1.82 2.05-.8 2.06-1.81 2.06Zm6.2 0c-1 0-1.81-.93-1.81-2.06s.79-2.05 1.8-2.05 1.83.92 1.82 2.05-.8 2.06-1.81 2.06Z"></path>
+              </svg>
+            </a>
+            <button
+              class="social-link social-link--profile"
+              type="button"
+              aria-label="Copy BTC address"
+              data-copy-address="btc"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15.4 10.5c1.15-.59 1.88-1.56 1.88-2.86 0-2.27-1.78-3.62-4.76-3.62H7.8v2.08H6v1.95h1.8v7.9H6v1.96h1.8V20h2.43v-2.02h1.22V20h2.42v-2.15c3.23-.22 5.13-1.76 5.13-4.33 0-1.78-1.09-2.75-3.6-3.02Zm-5.17-4.3h2.04c1.61 0 2.4.46 2.4 1.55 0 1.15-.89 1.67-2.64 1.67h-1.8V6.2Zm2.17 9.57h-2.17v-4.12h2.17c1.98 0 3 .55 3 1.94 0 1.42-1.03 2.18-3 2.18Z"></path>
+              </svg>
+            </button>
+            <button
+              class="social-link social-link--profile"
+              type="button"
+              aria-label="Copy LTC address"
+              data-copy-address="ltc"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9.2 4.2 7.1 14H5.2l-.33 1.76h1.86L6 19.8h10.92l.53-2.7h-7.6l.27-1.34h2.15l.33-1.76H10.5L12.23 4.2H9.2Z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <p class="profile-feedback" data-profile-feedback aria-live="polite"></p>
+
+          <div class="views profile-views">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5C6.5 5 2.08 8.11.5 12c1.58 3.89 6 7 11.5 7s9.92-3.11 11.5-7C21.92 8.11 17.5 5 12 5Zm0 11a4 4 0 1 1 4-4 4 4 0 0 1-4 4Zm0-6.4A2.4 2.4 0 1 0 14.4 12 2.4 2.4 0 0 0 12 9.6Z"></path>
+            </svg>
+            <span data-link-click-count>78</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-pane service-pane" data-pane="service">
+        <div class="service-hero">
+          <h2 class="service-title service-title--desktop">
+            FiveM Cheat<br>
+            service,<br>
+            Discord soon,<br>
+            cheat soon<br>
+            and hype marketing.
+          </h2>
+
+          <h2 class="service-title service-title--mobile">
+            FiveM Cheat service, Discord soon, cheat soon and hype marketing.
+          </h2>
+
+          <p class="service-subline">
+            Clean promo setup for exclusive drops, release builds and strong
+            hype. Built to look trusted, sharp and fully ready for launch.
+          </p>
+
+          <div class="service-cards">
+            <article class="service-card">
+              <span class="service-card__number">01</span>
+              <h3>FiveM Cheat</h3>
+              <p>FiveM cheat with premium presentation, clean visuals and a strong first impression on first view.</p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-card__number">02</span>
+              <h3>Discord Soon</h3>
+              <p>Discord opening soon with styled branding, teaser sections and a look that builds instant curiosity.</p>
+            </article>
+
+            <article class="service-card">
+              <span class="service-card__number">03</span>
+              <h3>Cheat Soon</h3>
+              <p>Marketing focused setup for upcoming cheat drops, trusted image and better conversion on launch day.</p>
+            </article>
+          </div>
+
+          <div class="service-actions service-actions--service">
+            <a class="primary-button primary-button--service" href="https://discord.gg/2BAwrUscuP" target="_blank" rel="noreferrer">Join Discord</a>
+            <button class="ghost-button ghost-button--service" type="button" data-switch-to="profile">Back</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
