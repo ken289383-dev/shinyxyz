@@ -804,6 +804,40 @@ h2 {
   gap: 0;
 }
 
+.service-title--desktop,
+.service-title--mobile,
+.service-subline,
+.service-card,
+.service-actions {
+  opacity: 0;
+  transform: translateY(22px) scale(0.985);
+}
+
+.service-pane.active.is-revealing .service-title--desktop,
+.service-pane.active.is-revealing .service-title--mobile {
+  animation: serviceRevealTitle 620ms cubic-bezier(0.22, 1, 0.36, 1) 40ms both;
+}
+
+.service-pane.active.is-revealing .service-subline {
+  animation: serviceRevealItem 620ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+
+.service-pane.active.is-revealing .service-card:nth-child(1) {
+  animation: serviceRevealCard 700ms cubic-bezier(0.22, 1, 0.36, 1) 240ms both;
+}
+
+.service-pane.active.is-revealing .service-card:nth-child(2) {
+  animation: serviceRevealCard 700ms cubic-bezier(0.22, 1, 0.36, 1) 330ms both;
+}
+
+.service-pane.active.is-revealing .service-card:nth-child(3) {
+  animation: serviceRevealCard 700ms cubic-bezier(0.22, 1, 0.36, 1) 420ms both;
+}
+
+.service-pane.active.is-revealing .service-actions {
+  animation: serviceRevealItem 620ms cubic-bezier(0.22, 1, 0.36, 1) 520ms both;
+}
+
 .service-title {
   margin-top: 14px;
   max-width: none;
@@ -1001,6 +1035,41 @@ body.service-view .claim-pill {
   }
 }
 
+@keyframes serviceRevealTitle {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.975);
+    letter-spacing: -0.035em;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: -0.065em;
+  }
+}
+
+@keyframes serviceRevealItem {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.988);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes serviceRevealCard {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes posterDrift {
   from {
     transform: scale(1.02) translate3d(0, 0, 0);
@@ -1160,5 +1229,17 @@ body.service-view .claim-pill {
   .claim-pill {
     bottom: 18px;
     min-width: calc(100vw - 24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-title--desktop,
+  .service-title--mobile,
+  .service-subline,
+  .service-card,
+  .service-actions {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
   }
 }
