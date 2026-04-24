@@ -34,6 +34,7 @@ const profileConfig = {
 const tabs = document.querySelectorAll(".top-tab");
 const panes = document.querySelectorAll(".tab-pane");
 const switches = document.querySelectorAll("[data-switch-to]");
+const servicePane = document.querySelector('[data-pane="service"]');
 const soundControl = document.querySelector(".sound-control");
 const soundButton = document.querySelector(".sound-button");
 const volumePanel = document.querySelector("[data-volume-panel]");
@@ -81,6 +82,16 @@ let audioEnabledByUser = false;
 let hasEnteredPage = false;
 let mediaReady = false;
 
+function restartServiceReveal() {
+  if (!servicePane) {
+    return;
+  }
+
+  servicePane.classList.remove("is-revealing");
+  void servicePane.offsetWidth;
+  servicePane.classList.add("is-revealing");
+}
+
 function setActiveTab(tabName) {
   tabs.forEach((tab) => {
     tab.classList.toggle("active", tab.dataset.tab === tabName);
@@ -93,6 +104,12 @@ function setActiveTab(tabName) {
   const isServiceView = tabName === "service";
   document.body.classList.toggle("service-view", isServiceView);
   document.body.classList.toggle("profile-view", !isServiceView);
+
+  if (isServiceView) {
+    restartServiceReveal();
+  } else {
+    servicePane?.classList.remove("is-revealing");
+  }
 
   if (window.location.hash !== `#${tabName}`) {
     history.replaceState(null, "", `#${tabName}`);
